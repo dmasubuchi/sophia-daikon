@@ -3,7 +3,7 @@
 GitHub の Repo のページを、Azure App Service の Web アプリ `daikon` で動かすデモです。AI は使いません。
 
 - 公開先：https://daikon-hccwemg6hyeghvb9.westus3-01.azurewebsites.net/
-- 中身：`index.html` の1枚だけ（プログラムは要りません）
+- 中身：`index.html`（ページ）、`style.css`（見た目）、`app.js`（押したときの動き）。サーバーのプログラムは要りません
 
 ## デモの手順
 
