@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>だいこんのサイト</title>
+<style>
+  :root { --bg:#f7f8f4; --card:#fff; --ink:#1f2a1f; --sub:#5d6b5d; --leaf:#3c8d3f; --line:#dde3d8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141914; --card:#1d241d; --ink:#e7ede6; --sub:#a3b1a2; --leaf:#7cc47f; --line:#2c372c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.8 -apple-system,"Hiragino Sans","Yu Gothic UI",sans-serif; }
+  main { max-width:760px; margin:auto; padding:32px 16px 48px; }
+  h1 { font-size:32px; margin:0 0 4px; }
+  .lead { color:var(--sub); margin:0 0 24px; }
+  .version { display:inline-block; background:var(--leaf); color:#fff; border-radius:999px; padding:2px 14px; font-weight:700; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:16px 0; }
+  h2 { font-size:19px; margin:0 0 8px; color:var(--leaf); }
+  ul { margin:0; padding-left:22px; }
+  .parts { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; }
+  .parts div { border:1px solid var(--line); border-radius:10px; padding:8px 10px; }
+  .parts b { display:block; }
+  footer { margin-top:28px; color:var(--sub); font-size:14px; }
+  code { background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:0 4px; }
+  @media (max-width:560px) { .parts { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>だいこんのサイト</h1>
+  <p class="lead">冬においしくなる、だいこんの話。　<span class="version">v1</span></p>
+
+  <section>
+    <h2>いろいろなだいこん</h2>
+    <ul>
+      <li>青首だいこん：店でいちばんよく見かける、首が緑のだいこん</li>
+      <li>聖護院だいこん：京都の丸いだいこん。煮物に向く</li>
+      <li>練馬だいこん：細長く、たくあん漬けに使われてきた</li>
+      <li>桜島だいこん：鹿児島の、とても大きくて丸いだいこん</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>場所で味が変わる</h2>
+    <div class="parts">
+      <div><b>上（葉に近い方）</b>甘い。サラダや大根おろしに</div>
+      <div><b>まん中</b>やわらかい。ふろふき大根やおでんに</div>
+      <div><b>下（先の方）</b>辛い。薬味や漬け物に</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>この Web ページはどこで動いているか</h2>
+    <ul>
+      <li>ページのもと：GitHub の Repo <code>dmasubuchi/sophia-daikon</code> の <code>index.html</code></li>
+      <li>動いている場所：Azure App Service の Web アプリ <code>daikon</code></li>
+      <li>入れ子：サブスクリプション「上智学院様ハンズオン」→ リソースグループ <code>teamsaitama-rg</code> → App Service プラン → Web アプリ <code>daikon</code></li>
+      <li>配備：Azure ポータルの「デプロイ センター」が GitHub から取ってくる</li>
+    </ul>
+  </section>
+
+  <footer>このページを開いた時刻：<span id="now"></span></footer>
+</main>
+<script>
+  document.getElementById("now").textContent = new Date().toLocaleString("ja-JP");
+</script>
+</body>
+</html>
